@@ -18,6 +18,7 @@
                                     <li><a class="nav-link" href="<?php echo site_url('pendaftaran');?>">Pendaftaran</a></li>
                                     <li><a class="nav-link" href="<?php echo site_url('pengumuman');?>">Pengumuman</a></li>
                                     <li><a class="nav-link" href="<?php echo site_url('agenda');?>">Agenda</a></li>
+                                    <li><a class="nav-link" href="<?php echo site_url('download');?>">Download Modul</a></li>
                                 </ul>
                                 </li>
                             </li>
@@ -26,9 +27,6 @@
                                 <a class="nav-link" href="<?php echo site_url('artikel');?>">Artikel  </a>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('galeri');?>">Gallery Sekolah</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('download');?>">Download Modul</a>
                                 </li>
                                 <li class="nav-item">
                                   <a class="nav-link" href="<?php echo site_url('contact');?>">Contact  </a>

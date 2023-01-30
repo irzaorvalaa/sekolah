@@ -2,25 +2,19 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Guru | SDIT Bina Insan Kamil Sukmajaya Depok</title>
     <link rel="shorcut icon" href="<?php echo base_url().'theme/images/icon1.png'?>">
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/bootstrap.min.css'?>">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/font-awesome.min.css'?>">
-    <!-- Simple Line Font -->
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/simple-line-icons.css'?>">
-    <!-- Owl Carousel -->
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/slick.css'?>">
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/slick-theme.css'?>">
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/owl.carousel.min.css'?>">
-    <!-- Main CSS -->
     <link href="<?php echo base_url().'theme/css/style.css'?>" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/transition-style">
 </head>
 
 <body>
@@ -50,6 +44,7 @@
 <!--//END HEADER -->
 
     <section class="our-teachers">
+    <div transition-style="in:wipe:down">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -74,6 +69,7 @@
               </div>
             <!-- End row -->
             <nav><?php echo $page;?></nav>
+        </div>
         </div>
     </section>
 

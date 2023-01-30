@@ -19,6 +19,7 @@
     <link href="<?php echo base_url().'theme/css/style.css'?>" rel="stylesheet">
     <link href="<?php echo base_url().'theme/css/jssocials.css'?>" rel="stylesheet">
     <link href="<?php echo base_url().'theme/css/jssocials-theme-flat.css'?>" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/transition-style">
     <style>
     	.sharePopup{
     		font-size: 11px;
@@ -56,6 +57,7 @@
 </section>
 
 <section class="blog-wrap">
+<div transition-style="in:wipe:left">
     <div class="container">
         <div class="row">
             <div class="col-md-8">
@@ -201,6 +203,7 @@
 
             </div>
         </div>
+    </div>
     </div>
 </section>
 

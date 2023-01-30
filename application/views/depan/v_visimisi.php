@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/slick-theme.css'?>">
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/owl.carousel.min.css'?>">
     <link href="<?php echo base_url().'theme/css/style.css'?>" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/transition-style">
 </head>
 
 <body>
@@ -41,6 +42,7 @@
 </section>
 
 <section class="welcome_about">
+<div transition-style="in:wipe:up">
     <div class="container">
         <div class="">
             <div class="">
@@ -79,6 +81,7 @@
             </div>
             
         </div>
+</div>
     </section>
     <footer>
     <?php $this->load->view('depan/partial/footer');?>

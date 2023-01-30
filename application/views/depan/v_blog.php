@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/simple-line-icons.css'?>">
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/owl.carousel.min.css'?>">
     <link href="<?php echo base_url().'theme/css/style.css'?>" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/transition-style">
     <?php
         function limit_words($string, $word_limit){
             $words = explode(" ",$string);
@@ -44,6 +45,7 @@
 </section>
 
 <section class="blog-wrap">
+<div transition-style="in:wipe:up">
     <div class="container">
         <div class="row">
             <div class="col-md-8">
@@ -99,6 +101,7 @@
 
             </div>
         </div>
+    </div>
     </div>
 </section>
 

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/slick-theme.css'?>">
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/owl.carousel.min.css'?>">
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/style.css'?>" >
+    <link rel="stylesheet" href="https://unpkg.com/transition-style">
     <?php
         function limit_words($string, $word_limit){
             $words = explode(" ",$string);
@@ -39,7 +40,6 @@
   .cards { grid-template-columns: repeat(3, 1fr); }
 }
 
-
 </style>
 </head>
 
@@ -64,6 +64,7 @@
         </div>
     </div>
 <section>
+<div transition-style="in:wipe:down">
     <div class="slider_img layout_two">
         <div id="carousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -110,6 +111,7 @@
             </a>
         </div>
     </div>
+    </div> 
 </section>
 
 <section class="clearfix about about-style2">
@@ -118,13 +120,11 @@
             <div class="col-md-8">
                <h2 style="width: auto;">Selamat Datang di Sekolah SDIT Bina Insan Kamil Sukmajaya Depok</h2>
                <p>Kami Menyambut baik terbitnya Website SDIT Bina Insan Kamil yang baru , dengan harapan dipublikasinya website ini sekolah berharap : Peningkatan layanan pendidikan kepada siswa, orangtua, dan masyarakat pada umumnya semakin meningkat. </p>
-
             </div>
             <div class="col-md-4">
                 <img src="<?php echo base_url().'theme/images/icon1.png'?>" class="img-fluid about-img" alt="#">
             </div>
-        </div>
-    </div>
+
 </section>
 
 <section class="testimonial">

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/fullcalendar.min.css'?>" />
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/owl.carousel.min.css'?>">
     <link href="<?php echo base_url().'theme/css/style.css'?>" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/transition-style">
 </head>
 
 <body>
@@ -39,6 +40,7 @@
 </section>
 
 <section class="events">
+<div transition-style="in:square:hesitate">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -88,6 +90,7 @@
     </div>
 </div>
 
+</div>
 </div>
 </div>
 </div>
