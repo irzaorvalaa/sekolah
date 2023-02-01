@@ -29,7 +29,7 @@
           <div class="row">
               <div class="col-md-12">
                   <nav class="navbar navbar2 navbar-toggleable-md navbar-light bg-faded">
-                      <button class="navbar-toggler navbar-toggler2 navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
+                  <button class="navbar-toggler navbar-toggler2 navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" style="top: 0.5rem;">
                           <span class="icon-menu"></span>
                       </button>
                       <a href="<?php echo site_url('');?>" class="navbar-brand nav-brand2" ><img class="img img-responsive" width="259px;" src="<?php echo base_url().'theme/images/icon-navbar.png'?>"></a>

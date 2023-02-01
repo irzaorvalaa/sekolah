@@ -25,7 +25,7 @@
           <div class="row">
               <div class="col-md-12">
                   <nav class="navbar navbar2 navbar-toggleable-md navbar-light bg-faded">
-                      <button class="navbar-toggler navbar-toggler2 navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
+                  <button class="navbar-toggler navbar-toggler2 navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" style="top: 0.5rem;">
                           <span class="icon-menu"></span>
                       </button>
                       <a href="<?php echo site_url('');?>" class="navbar-brand nav-brand2" ><img class="img img-responsive" width="259px;" src="<?php echo base_url().'theme/images/icon-navbar.png'?>"></a>
@@ -55,6 +55,7 @@
                 <?php foreach ($data->result() as $row) : ?>
                     <div class="col-xs-12 col-sm-6 col-md-3">
                         <div class="admission_insruction">
+                          <div style="width: 270px;">
                           <?php if(empty($row->guru_photo)):?>
                             <img src="<?php echo base_url().'assets/images/blank.png';?>" class="img-fluid" alt="#">
                           <?php else:?>
@@ -63,6 +64,7 @@
                             <p class="text-center mt-3"><span><?php echo $row->guru_nama;?></span>
                                 <br>
                                 <?php echo $row->guru_mapel;?></p>
+                                </div>
                         </div>
                     </div>
                 <?php endforeach;?>

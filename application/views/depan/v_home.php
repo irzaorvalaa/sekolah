@@ -49,7 +49,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <nav class="navbar navbar2 navbar-toggleable-md navbar-light bg-faded">
-                        <button class="navbar-toggler navbar-toggler2 navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
+                        <button class="navbar-toggler navbar-toggler2 navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" style="top: 0.5rem;">
                             <span class="icon-menu"></span>
                         </button>
                         <a href="<?php echo site_url('');?>" class="navbar-brand nav-brand2" ><img class="img img-responsive" width="259px;" src="<?php echo base_url().'theme/images/icon-navbar.png'?>"></a>
@@ -74,7 +74,7 @@
             </ol>
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
-                    <img class="d-block" src="<?php echo base_url().'theme/images/slider.jpg'?>" alt="First slide">
+                    <img class="d-block" src="<?php echo base_url().'theme/images/stellar.jpg'?>" alt="First slide">
                     <div class="carousel-caption d-md-block">
                         <div class="slider_title">
                             <h1>Bepikir Kreaftif &amp; Inovatif</h1>
@@ -115,6 +115,7 @@
 </section>
 
 <section class="clearfix about about-style2">
+<div transition-style="in:square:bottom-right">
     <div class="container">
         <div class="row">
             <div class="col-md-8">
@@ -124,8 +125,9 @@
             <div class="col-md-4">
                 <img src="<?php echo base_url().'theme/images/icon1.png'?>" class="img-fluid about-img" alt="#">
             </div>
-
+            </div>
 </section>
+
 
 <section class="testimonial">
         <div class="container">

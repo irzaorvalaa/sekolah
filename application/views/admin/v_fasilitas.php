@@ -1,4 +1,3 @@
-<!--Counter Inbox-->
 <?php
     $query=$this->db->query("SELECT * FROM tbl_inbox WHERE inbox_status='1'");
     $query2=$this->db->query("SELECT * FROM tbl_komentar WHERE komentar_status='0'");
@@ -10,7 +9,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Pendaftaran | Admin - SDIT Bina Insan Kamil Sukmajaya Depok</title>
+  <title>Fasilitas Sekolah | Admin - SDIT Bina Insan Kamil Sukmajaya Depok</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="shorcut icon" href="<?php echo base_url().'theme/images/icon1.png'?>">
   <link rel="stylesheet" href="<?php echo base_url().'assets/bootstrap/css/bootstrap.min.css'?>">
@@ -33,7 +32,6 @@
     <section class="sidebar">
       <ul class="sidebar-menu">
       <?php $this->load->view('admin/partial/v_routes');?>
-
       </ul>
     </section>
   </aside>
@@ -41,13 +39,12 @@
   <div class="content-wrapper">
     <section class="content-header">
       <h1>
-        List Pendaftaran
+        Fasilitas Sekolah
         <small></small>
       </h1>
-      <ol class="breadcrumb">
+      <ol class="breadcrumb" style="font-size:15px;">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Pendaftaran</a></li>
-        <li class="active">List Pendaftaran</li>
+        <li class="active">Fasilitas Sekolah</li>
       </ol>
     </section>
 
@@ -57,17 +54,14 @@
           <div class="box">
           <div class="box">
             <div class="box-header">
-              <a class="btn btn-success btn-flat" href="<?php echo base_url().'admin/pendaftaran/add_pendaftaran'?>"><span class="fa fa-plus"></span> Post pendaftaran</a>
-            </div>  
+              <a class="btn btn-success btn-flat" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span> Add Fasilitas</a>
+            </div>
             <div class="box-body">
               <table id="example1" class="table table-striped" style="font-size:15px;">
                 <thead>
                 <tr>
-      					<th>Gambar</th>
-      					<th>Judul</th>
-      					<th>Tanggal</th>
-      					<th>Author</th>
-      					<th>Baca</th>
+          					<th>Photo</th>
+          					<th>Nama Fasilitas</th>
                     <th style="text-align:right;">Aksi</th>
                 </tr>
                 </thead>
@@ -76,27 +70,20 @@
           					$no=0;
           					foreach ($data->result_array() as $i) :
           					   $no++;
-          					   $pendaftaran_id=$i['pendaftaran_id'];
-          					   $pendaftaran_judul=$i['pendaftaran_judul'];
-          					   $pendaftaran_isi=$i['pendaftaran_isi'];
-          					   $pendaftaran_tanggal=$i['tanggal'];
-          					   $pendaftaran_author=$i['pendaftaran_author'];
-          					   $pendaftaran_gambar=$i['pendaftaran_gambar'];
-          					   $pendaftaran_views=$i['pendaftaran_views'];
-              
+          					   $id=$i['fasilitas_id'];
+          					   $nama=$i['fasilitas_judul'];
+                               $photo=$i['fasilitas_photo'];
 
                     ?>
                 <tr>
-                  <td><img src="<?php echo base_url().'assets/images/'.$pendaftaran_gambar;?>" style="width:90px;"></td>
-                  <td><?php echo $pendaftaran_judul;?></td>
-
-        				  <td><?php echo $pendaftaran_tanggal;?></td>
-        				  <td><?php echo $pendaftaran_author;?></td>
-        				  <td><?php echo $pendaftaran_views;?></td>
-        				
+                  <?php if(empty($photo)):?>
+                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/user_blank.png';?>"></td>
+                  <?php else:?>
+                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/'.$photo;?>"></td>
+                  <?php endif;?>
+        				  <td><?php echo $nama;?></td>
                   <td style="text-align:right;">
-                        <a class="btn" href="<?php echo base_url().'admin/pendaftaran/get_edit/'.$pendaftaran_id;?>"><span class="fa fa-pencil"></span></a>
-                        <a class="btn" data-toggle="modal" data-target="#ModalHapus<?php echo $pendaftaran_id;?>"><span class="fa fa-trash"></span></a>
+                        <a class="btn" data-toggle="modal" data-target="#ModalHapus<?php echo $id;?>"><span class="fa fa-trash"></span></a>
                   </td>
                 </tr>
 				<?php endforeach;?>
@@ -115,27 +102,65 @@
     </div>
     <strong>Copyright &copy; 2023 SDIT Bina Insan Kamil Sukmajaya Depok.</strong> All rights reserved.
   </footer>
-
   <div class="control-sidebar-bg"></div>
 </div>
 
-    <?php foreach ($data->result_array() as $i) :
-              $pendaftaran_id=$i['pendaftaran_id'];
-              $pendaftaran_judul=$i['pendaftaran_judul'];
-              $pendaftaran_gambar=$i['pendaftaran_gambar'];
-            ?>
-        <div class="modal fade" id="ModalHapus<?php echo $pendaftaran_id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Hapus Pendaftaran</h4>
+                        <h4 class="modal-title" id="myModalLabel">Add Fasilitas</h4>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin/pendaftaran/hapus_pendaftaran'?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url().'admin/fasilitas/simpan_fasilitas'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
-							       <input type="hidden" name="kode" value="<?php echo $pendaftaran_id;?>"/>
-                     <input type="hidden" value="<?php echo $pendaftaran_gambar;?>" name="gambar">
-                            <p>Apakah Anda yakin mau menghapus Posting Pendaftaran <b><?php echo $pendaftaran_judul;?></b> ?</p>
+
+                                   
+                                    <div class="form-group">
+                                        <label for="inputUserName" class="col-sm-4 control-label">Nama *</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" name="xnama" class="form-control" id="inputUserName" placeholder="Nama" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputUserName" class="col-sm-4 control-label">Photo *</label>
+                                        <div class="col-sm-7">
+                                            <input type="file" name="filefoto"/>
+                                        </div>
+                                    </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary btn-flat" id="simpan">Simpan</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+ 
+
+	<?php foreach ($data->result_array() as $i) :
+              $id=$i['fasilitas_id'];
+              $nama=$i['fasilitas_judul'];
+              $photo=$i['fasilitas_photo'];
+            ?>
+        <div class="modal fade" id="ModalHapus<?php echo $id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
+                        <h4 class="modal-title" id="myModalLabel">Hapus Fasilitas</h4>
+                    </div>
+                    <form class="form-horizontal" action="<?php echo base_url().'admin/fasilitas/hapus_fasilitas'?>" method="post" enctype="multipart/form-data">
+                    <div class="modal-body">
+							       <input type="hidden" name="kode" value="<?php echo $id;?>"/>
+                     <input type="hidden" value="<?php echo $photo;?>" name="gambar">
+                            <p>Apakah Anda yakin mau menghapus fasilitas <b><?php echo $nama;?></b> ?</p>
 
                     </div>
                     <div class="modal-footer">
@@ -147,6 +172,9 @@
             </div>
         </div>
 	<?php endforeach;?>
+
+
+
 
 <script src="<?php echo base_url().'assets/plugins/jQuery/jquery-2.2.3.min.js'?>"></script>
 <script src="<?php echo base_url().'assets/bootstrap/js/bootstrap.min.js'?>"></script>
@@ -183,11 +211,11 @@
                 });
         </script>
 
-<?php elseif($this->session->flashdata('msg')=='success'):?>
+    <?php elseif($this->session->flashdata('msg')=='success'):?>
         <script type="text/javascript">
                 $.toast({
                     heading: 'Success',
-                    text: "Pendaftaran Berhasil disimpan ke database.",
+                    text: "Fasilitas Berhasil disimpan ke database.",
                     showHideTransition: 'slide',
                     icon: 'success',
                     hideAfter: false,
@@ -199,7 +227,7 @@
         <script type="text/javascript">
                 $.toast({
                     heading: 'Info',
-                    text: "Pendaftaran berhasil di update",
+                    text: "Fasilitas berhasil di update",
                     showHideTransition: 'slide',
                     icon: 'info',
                     hideAfter: false,
@@ -211,7 +239,7 @@
         <script type="text/javascript">
                 $.toast({
                     heading: 'Success',
-                    text: "Pendaftaran Berhasil dihapus.",
+                    text: "Fasilitas Berhasil dihapus.",
                     showHideTransition: 'slide',
                     icon: 'success',
                     hideAfter: false,

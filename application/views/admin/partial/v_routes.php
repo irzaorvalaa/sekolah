@@ -54,13 +54,19 @@
             <li><a href="<?php echo base_url().'admin/galeri'?>"><i class="fa fa-picture-o"></i> Photos</a></li>
           </ul>
         </li>
-        <li>
-          <a href="<?php echo base_url().'admin/guru'?>">
-            <i class="fa fa-graduation-cap"></i> <span>Data Guru</span>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-list"></i>
+            <span>Tentang Sekolah</span>
             <span class="pull-right-container">
-              <small class="label pull-right"></small>
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url().'admin/fasilitas'?>"><i class="fa fa-thumbs-up"></i>Fasilitas Sekolah</a></li>
+            <li><a href="<?php echo base_url().'admin/program'?>"><i class="fa fa-trophy"></i>Program Unggulan</a></li>
+            <li><a href="<?php echo base_url().'admin/guru'?>"><i class="fa fa-graduation-cap"></i>Data Guru</a></li>
+          </ul>
         </li>
         <li>
           <a href="<?php echo base_url().'admin/agenda'?>">
@@ -73,14 +79,6 @@
         <li>
           <a href="<?php echo base_url().'admin/pengumuman'?>">
             <i class="fa fa-volume-up"></i> <span>Pengumuman</span>
-            <span class="pull-right-container">
-              <small class="label pull-right"></small>
-            </span>
-          </a>
-        </li>
-        <li>
-          <a href="<?php echo base_url().'admin/files'?>">
-            <i class="fa fa-download"></i> <span>Upload Modul</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
             </span>
